@@ -23,5 +23,13 @@ class nbcrtrain::open
     require  => Package['python2-pip'],
   }
 
+  # Install IMOD 4.9.4
+  exec { 'install_imod': 
+    command => '/bin/cd ~; /bin/wget http://bio3d.colorado.edu/imod/AMD64-RHEL5/imod_4.9.4_RHEL7-64_CUDA6.5.sh;
+                /bin/chmod a+x imod_4.9.4_RHEL7-64_CUDA6.5.sh;
+                /bin/sh imod_4.9.4_RHEL7-64_CUDA6.5.sh -yes;
+                /bin/rm imod_4.9.4_RHEL7-64_CUDA6.5.sh',
+    creates =>  '/usr/local/IMOD/bin/imod'
+  }
   
 }

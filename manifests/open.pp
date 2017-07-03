@@ -21,7 +21,7 @@ class nbcrtrain::open
     ensure   => 'installed',
     provider => 'pip',
     require  => Package['python2-pip'],
-  } ->
+  }
 
   
 }

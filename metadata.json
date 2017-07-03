@@ -1,0 +1,19 @@
+{
+  "name": "puppet-nbcrtrain",
+  "version": "1.0",
+  "author": "Chris Churas",
+  "summary": "NBCR training module",
+  "license": "Custom - UC Regents",
+  "source": "git://github.com/CRBS/puppet-nbcrtrain.git",
+  "description": "NBCR training module",
+  "issues_url": "https://github.com/CRBS/puppet-nbcrtrain/issues",
+  "project_page": "https://github.com/CRBS/puppet-nbcrtrain",
+  "tags": [ "nbcrtrain", "centos"],
+  "operatingsystem_support": [
+    { "operatingsystem": "CentOS", "operatingsystemrelease": [ "7" ] }
+  ],
+   
+  "dependencies": [
+  
+  ]
+}

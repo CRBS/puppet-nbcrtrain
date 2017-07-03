@@ -38,7 +38,7 @@ class nbcrtrain::open
                 /bin/wget https://github.com/singularityware/singularity/releases/download/$VERSION/singularity-$VERSION.tar.gz;
                 /bin/tar xvf singularity-$VERSION.tar.gz;
                 /bin/cd singularity-$VERSION;
-                ./configure --prefix=/usr/local;
+                /bin/sh configure --prefix=/usr/local;
                 /bin/make;
                 /bin/make install;
                 /bin/cd ..;/bin/rm -f singularity-$VERSION.tar.gz;

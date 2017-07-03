@@ -31,5 +31,19 @@ class nbcrtrain::open
                 /bin/rm imod_4.9.4_RHEL7-64_CUDA6.5.sh',
     creates =>  '/usr/local/IMOD/bin/imod'
   }
-  
+ 
+  # Install Singularity
+  exec { 'install_singularity':
+    command => '/bin/cd ~; VERSION=2.3.1;
+                /bin/wget https://github.com/singularityware/singularity/releases/download/$VERSION/singularity-$VERSION.tar.gz;
+                /bin/tar xvf singularity-$VERSION.tar.gz;
+                /bin/cd singularity-$VERSION;
+                ./configure --prefix=/usr/local;
+                /bin/make;
+                /bin/make install;
+                /bin/echo "bind path = /vagrant" >> /etc/singularity/singularity.conf;
+                /bin/cd ..;/bin/rm -f singularity-$VERSION.tar.gz;
+                /bin/rm -rf singularity-$VERSION',
+    creates => '/usr/bin/singularity'
+  }
 }

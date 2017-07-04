@@ -37,11 +37,8 @@ class nbcrtrain::open
     command => '/bin/cd ~;export VERSION=2.3.1;
                 /bin/wget https://github.com/singularityware/singularity/releases/download/$VERSION/singularity-$VERSION.tar.gz;
                 /bin/tar xvf singularity-$VERSION.tar.gz;
-                /bin/cd singularity-$VERSION;
-                /bin/sh configure --prefix=/usr/local;
-                /bin/make;
-                /bin/make install;
-                /bin/cd ..;/bin/rm -f singularity-$VERSION.tar.gz;
+                /bin/sh -c "cd singularity-2.3.1;./configure --prefix=/usr/local;make; make install";
+                /bin/rm -f singularity-$VERSION.tar.gz;
                 /bin/rm -rf singularity-$VERSION',
     creates => '/usr/bin/singularity'
   }
